@@ -4,9 +4,9 @@
 
 #include <iostream>
 #include <fstream>
-#include <string>
 
 #include "Interpreter.h"
+#include "scanner.h"
 
 using namespace std;
 
@@ -17,7 +17,7 @@ void runSourceFile(const string &source_filename) {
 
     if (source_file.is_open()) {
         while (getline(source_file, line))
-            cout << line << endl;
+            runLine(line);
     } else {
         cerr << "Unable to open file :" << source_filename << endl;
     }
@@ -29,7 +29,15 @@ void runPrompt() {
     cout << ">> ";
 
     while (getline(cin, line)) {
-        cout << line << endl;
+        runLine(line);
         cout << ">> ";
     }
+}
+
+void runLine(const string& line){
+    // Scaning
+    auto tokens = scanTokens(line);
+
+    for(auto token: tokens)
+        cout << token << endl;
 }

@@ -15,6 +15,6 @@ class Interpreter {
 
 void runSourceFile(const string& source_filename);
 void runPrompt();
-
+void runLine(const string& line);
 
 #endif //JAMPI_INTERPRETER_INTERPRETER_H
