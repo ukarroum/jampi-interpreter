@@ -7,8 +7,10 @@
 
 #include <vector>
 
+#include "Token.h"
+
 using namespace std;
 
-vector<string> scanTokens(string line);
+vector<Token> scanTokens(string line);
 
 #endif //JAMPI_INTERPRETER_SCANNER_H

@@ -37,7 +37,4 @@ void runPrompt() {
 void runLine(const string& line){
     // Scaning
     auto tokens = scanTokens(line);
-
-    for(auto token: tokens)
-        cout << token << endl;
 }
